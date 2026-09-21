@@ -1,9 +1,1547 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <title>My GitHub Pages Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURORA ATELIER — Quiet Luxury & Elevated Essentials</title>
+    
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for minimalist luxury icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDFBF7',
+                        ecru: '#F5F2EB',
+                        sand: '#E9E4DC',
+                        stone: '#D3CCC2',
+                        muted: '#7A756D',
+                        charcoal: '#211F1D',
+                        espresso: '#141211',
+                        olive: '#636D58',
+                        bronze: '#9B784A',
+                        terracotta: '#A86D57'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    },
+                    letterSpacing: {
+                        widest2: '0.22em',
+                        widest3: '0.3em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FDFBF7;
+            color: #211F1D;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle luxury scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D3CCC2;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9B784A;
+        }
+
+        /* Soft fade & scale animations */
+        .fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pin pulse for Shop-the-Look */
+        @keyframes subtlePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(253, 251, 247, 0.7); }
+            50% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(253, 251, 247, 0); }
+        }
+        .hotspot-pulse {
+            animation: subtlePulse 2.5s infinite;
+        }
+
+        /* Ticker smooth animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 28s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello, World! Welcome to my new website.</h1>
+<body class="selection:bg-bronze selection:text-white">
+
+    <!-- Top Announcement Ticker -->
+    <aside aria-label="Announcement" class="bg-espresso text-cream text-[11px] tracking-widest uppercase py-2.5 overflow-hidden border-b border-white/10 select-none">
+        <div class="animate-marquee whitespace-nowrap flex items-center font-medium">
+            <div class="flex items-center space-x-12 px-6">
+                <span>The Autumn Atelier Capsule has landed</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Direct-to-loom pricing — Luxury without the 8x markup</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Complimentary express worldwide shipping over $150</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Crafted from certified Grade-A Mongolian cashmere & Mulberry silk</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+            </div>
+            <div class="flex items-center space-x-12 px-6">
+                <span>The Autumn Atelier Capsule has landed</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Direct-to-loom pricing — Luxury without the 8x markup</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Complimentary express worldwide shipping over $150</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+                <span>Crafted from certified Grade-A Mongolian cashmere & Mulberry silk</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-bronze inline-block"></span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Navigation Header -->
+    <header id="siteHeader" class="sticky top-0 z-40 bg-cream/90 backdrop-blur-md transition-all duration-300 border-b border-stone/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Left: Navigation Links (Desktop) -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-charcoal font-medium">
+                    <a href="#collection" class="hover:text-bronze transition-colors py-1 relative group">
+                        Collection
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-bronze transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#philosophy" class="hover:text-bronze transition-colors py-1 relative group">
+                        Honest Luxury
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-bronze transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#lookbook" class="hover:text-bronze transition-colors py-1 relative group">
+                        Lookbook
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-bronze transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#fabrics" class="hover:text-bronze transition-colors py-1 relative group">
+                        Fibers & Ethics
+                        <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-bronze transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-charcoal focus:outline-none" aria-label="Open navigation menu">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Center: Brand Logo -->
+                <div class="text-center">
+                    <a href="#" class="inline-block group">
+                        <span class="block font-serif text-2xl sm:text-3xl tracking-widest3 font-light text-espresso uppercase group-hover:text-bronze transition-colors">
+                            AURORA
+                        </span>
+                        <span class="block text-[9px] tracking-widest3 text-muted uppercase mt-0.5 font-sans">
+                            Atelier &bull; Paris
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Right: Utility Actions -->
+                <div class="flex items-center space-x-4 sm:space-x-6 text-charcoal">
+                    <button onclick="toggleSearchModal()" class="p-2 hover:text-bronze transition-colors" title="Search catalog" aria-label="Search">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                    </button>
+                    
+                    <button onclick="showToast('Wishlist feature synced to your session')" class="p-2 hover:text-bronze transition-colors relative" title="Saved items" aria-label="Saved items">
+                        <i class="ph ph-heart text-xl"></i>
+                        <span id="wishlistCount" class="absolute top-1 right-1 w-2 h-2 rounded-full bg-bronze hidden"></span>
+                    </button>
+
+                    <!-- Cart Trigger -->
+                    <button onclick="toggleCartDrawer(true)" class="flex items-center space-x-2 py-2 px-3 rounded-full hover:bg-ecru transition-all" title="View Cart" aria-label="Shopping Bag">
+                        <span class="relative">
+                            <i class="ph ph-tote text-xl"></i>
+                            <span id="cartCountBadge" class="absolute -top-1.5 -right-2 bg-espresso text-cream text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                        </span>
+                        <span class="hidden sm:inline text-xs font-semibold tracking-wider uppercase ml-1" id="cartHeaderTotal">$0.00</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="mobileDrawerPanel" class="w-4/5 max-w-sm h-full bg-cream p-8 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+            <div>
+                <div class="flex justify-between items-center pb-6 border-b border-stone/40">
+                    <span class="font-serif text-xl tracking-widest text-espresso">AURORA ATELIER</span>
+                    <button id="closeMobileMenu" class="p-2 text-charcoal hover:text-bronze text-2xl" aria-label="Close navigation menu">
+                        <i class="ph ph-x"></i>
+                    </button>
+                </div>
+                <nav class="mt-8 flex flex-col space-y-6 text-sm uppercase tracking-widest font-medium">
+                    <a href="#collection" class="mobile-nav-link hover:text-bronze transition-colors">The Capsule</a>
+                    <a href="#philosophy" class="mobile-nav-link hover:text-bronze transition-colors">Honest Luxury Model</a>
+                    <a href="#lookbook" class="mobile-nav-link hover:text-bronze transition-colors">Autumn Lookbook</a>
+                    <a href="#fabrics" class="mobile-nav-link hover:text-bronze transition-colors">Sustainable Fibers</a>
+                    <a href="#reviews" class="mobile-nav-link hover:text-bronze transition-colors">Editorial Reviews</a>
+                </nav>
+            </div>
+            <div class="pt-6 border-t border-stone/30 text-xs text-muted space-y-2">
+                <p class="font-serif italic text-sm text-charcoal">"Luxury is quiet simplicity, tailored perfection, and honest pricing."</p>
+                <p>&copy; AURORA Atelier Studio Paris.</p>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="relative bg-ecru overflow-hidden border-b border-stone/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-28">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left: Editorial Content -->
+                    <div class="lg:col-span-6 space-y-6 lg:pr-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-sand/60 border border-stone/50 text-[11px] uppercase tracking-widest text-charcoal font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse"></span>
+                            <span>Direct Mill Partnership &bull; Autumn/Winter Edition</span>
+                        </div>
+                        
+                        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-light text-espresso leading-[1.08] tracking-tight">
+                            Runway craftsmanship.<br>
+                            <span class="font-serif italic font-normal text-bronze">Uncompromised</span> pricing.
+                        </h1>
+                        
+                        <p class="text-sm sm:text-base text-muted max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            We bypassed traditional fashion house markups, wholesale agents, and ostentatious logos. What remains is pure fiber excellence: pure Mongolian cashmere, heavy Mulberry silks, and double-faced wool coats made to outlive seasons.
+                        </p>
+
+                        <!-- Price Transparency Callout -->
+                        <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs tracking-wider uppercase text-charcoal/80">
+                            <div class="flex items-center space-x-2 bg-cream/80 px-3.5 py-2 rounded-xl border border-stone/30 shadow-sm">
+                                <i class="ph ph-check-circle text-olive text-base"></i>
+                                <span>No 800% Markups</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-cream/80 px-3.5 py-2 rounded-xl border border-stone/30 shadow-sm">
+                                <i class="ph ph-sparkle text-bronze text-base"></i>
+                                <span>Certified Artisanal Mills</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-cream/80 px-3.5 py-2 rounded-xl border border-stone/30 shadow-sm">
+                                <i class="ph ph-arrows-counter-clockwise text-charcoal text-base"></i>
+                                <span>Lifetime Fit Guarantee</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                            <a href="#collection" class="w-full sm:w-auto px-8 py-4 bg-espresso text-cream text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-bronze transition-all duration-300 text-center shadow-lg hover:shadow-xl">
+                                Explore The Capsule
+                            </a>
+                            <a href="#lookbook" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-charcoal/40 text-charcoal text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-sand/60 transition-all text-center">
+                                View Interactive Lookbook
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Editorial Image Collage -->
+                    <div class="lg:col-span-6 relative">
+                        <div class="grid grid-cols-12 gap-4 items-center">
+                            <!-- Main Visual -->
+                            <div class="col-span-8 relative">
+                                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl bg-sand relative group">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80" 
+                                        alt="Editorial Wool Overcoat in Sand"
+                                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                        onerror="this.src='https://placehold.co/800x1067/E9E4DC/211F1D?text=Aurora+Wool+Coat'"
+                                    />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+                                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                                        <p class="text-[10px] tracking-widest uppercase font-mono text-sand/80">Capsule 04 &bull; Item 01</p>
+                                        <p class="font-serif text-lg italic">The Double-Faced Cashmere Robe Coat</p>
+                                        <p class="text-xs font-medium text-cream/90 mt-1">$240 <span class="line-through text-white/50 text-[11px] ml-1.5">Traditional Retail $820</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Accent Secondary Card -->
+                            <div class="col-span-4 space-y-4">
+                                <div class="aspect-square rounded-2xl overflow-hidden shadow-md bg-sand relative group">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=600&q=80" 
+                                        alt="Cashmere Knitwear close up"
+                                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                                        onerror="this.src='https://placehold.co/600x600/E9E4DC/211F1D?text=Knit+Texture'"
+                                    />
+                                </div>
+                                
+                                <div class="p-5 rounded-2xl bg-cream border border-stone/40 shadow-sm text-left">
+                                    <span class="font-serif text-2xl font-light text-espresso block">100%</span>
+                                    <span class="text-[11px] uppercase tracking-wider text-muted font-medium block">Pure Mulberry Silk & Wool</span>
+                                    <p class="text-[11px] text-charcoal/70 mt-1 leading-snug">Spun in Biella, Italy. Never synthetic microfibers.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating floating badge -->
+                        <div class="absolute -bottom-4 left-6 sm:left-12 bg-cream/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-stone/40 flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-olive/15 text-olive flex items-center justify-center font-serif font-bold text-base">
+                                <i class="ph ph-scales"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] font-bold tracking-wider uppercase text-espresso">Fair Price Benchmark</p>
+                                <p class="text-[11px] text-muted">Directly transparent breakdown on every piece</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Three Pillars of Honest Luxury -->
+        <section id="philosophy" class="py-14 bg-cream border-b border-stone/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-ecru/60 border border-stone/30 hover:border-bronze/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-bronze shadow-sm shrink-0">
+                            <i class="ph ph-hand-heart text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-semibold uppercase tracking-wider text-espresso">The 2.5x Markup Rule</h2>
+                            <p class="text-xs text-muted mt-1.5 leading-relaxed">
+                                Conventional luxury marks goods up by 800% to 1200% for prestige marketing. We cap all atelier margins at 2.5x, passing raw value directly to you.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-ecru/60 border border-stone/30 hover:border-bronze/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-olive shadow-sm shrink-0">
+                            <i class="ph ph-plant text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-semibold uppercase tracking-wider text-espresso">No Synthetic Compromise</h2>
+                            <p class="text-xs text-muted mt-1.5 leading-relaxed">
+                                Zero polyester linings or nylon blends disguised as "modern stretch". Only biodegradable Grade-A cashmere, long-staple cotton, and raw silk.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-5 rounded-2xl bg-ecru/60 border border-stone/30 hover:border-bronze/40 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-cream flex items-center justify-center text-charcoal shadow-sm shrink-0">
+                            <i class="ph ph-scissors text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-semibold uppercase tracking-wider text-espresso">Master Tailor Fit</h2>
+                            <p class="text-xs text-muted mt-1.5 leading-relaxed">
+                                Pattern cut in Paris with French seam finishes, horn buttons, and reinforced pressure points that drape effortlessly on all silhouettes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Product Catalog -->
+        <section id="collection" class="py-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-widest font-semibold text-bronze">Autumn / Winter Permanent Wardrobe</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-espresso font-light mt-1">The Essentials Capsule</h2>
+                        <p class="text-xs sm:text-sm text-muted mt-2 max-w-lg font-light">
+                            Designed to be paired in effortless monochromatic layers. Click any item to explore tailored details, fabric provenance, and benchmark comparisons.
+                        </p>
+                    </div>
+
+                    <!-- Category Filter Tabs -->
+                    <div class="mt-6 md:mt-0 flex flex-wrap gap-2 text-xs uppercase tracking-wider font-medium" id="categoryFilters">
+                        <button onclick="filterCategory('all')" class="filter-btn active px-4 py-2 rounded-full bg-espresso text-cream transition-all" data-cat="all">All Pieces</button>
+                        <button onclick="filterCategory('coats')" class="filter-btn px-4 py-2 rounded-full bg-ecru text-charcoal hover:bg-sand transition-all" data-cat="coats">Coats & Jackets</button>
+                        <button onclick="filterCategory('knitwear')" class="filter-btn px-4 py-2 rounded-full bg-ecru text-charcoal hover:bg-sand transition-all" data-cat="knitwear">Cashmere Knits</button>
+                        <button onclick="filterCategory('silks')" class="filter-btn px-4 py-2 rounded-full bg-ecru text-charcoal hover:bg-sand transition-all" data-cat="silks">Silks & Tops</button>
+                        <button onclick="filterCategory('trousers')" class="filter-btn px-4 py-2 rounded-full bg-ecru text-charcoal hover:bg-sand transition-all" data-cat="trousers">Tailored Trousers</button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Products dynamically rendered via JavaScript -->
+                </div>
+
+                <!-- Bottom Banner Notice -->
+                <div class="mt-16 p-8 rounded-3xl bg-ecru border border-stone/30 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-sand flex items-center justify-center text-espresso text-2xl shrink-0">
+                            <i class="ph ph-package"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-lg font-normal text-espresso">Tailored to your body. Return if not in love.</h3>
+                            <p class="text-xs text-muted mt-0.5">Complimentary 30-day home try-on with pre-printed return labels included in every box.</p>
+                        </div>
+                    </div>
+                    <a href="#lookbook" class="px-6 py-3 rounded-full bg-cream border border-charcoal/20 text-charcoal text-xs uppercase tracking-widest font-semibold hover:border-bronze hover:text-bronze transition-colors whitespace-nowrap">
+                        See Styled Combinations
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Interactive "Shop The Look" Editorial Hotspots -->
+        <section id="lookbook" class="py-20 bg-ecru border-y border-stone/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <span class="text-[11px] uppercase tracking-widest font-semibold text-bronze">Interactive Lookbook</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-espresso font-light mt-1">Tone-on-Tone Quiet Elegance</h2>
+                    <p class="text-xs sm:text-sm text-muted mt-2 font-light">
+                        Hover or tap the glowing pins to inspect individual garments worn by our muse. Built to compose a minimalist 10-piece capsule.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Interactive Styled Portrait with Hotspots -->
+                    <div class="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-2xl bg-sand aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/5]">
+                        <img 
+                            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80" 
+                            alt="Quiet luxury outfit combination"
+                            class="w-full h-full object-cover object-top"
+                            onerror="this.src='https://placehold.co/1000x1250/E9E4DC/211F1D?text=Editorial+Lookbook'"
+                        />
+                        <div class="absolute inset-0 bg-black/10"></div>
+
+                        <!-- Hotspot 1: Coat -->
+                        <button 
+                            onclick="selectHotspot(1)"
+                            aria-label="Inspect Double-Faced Robe Coat"
+                            class="absolute top-[28%] left-[45%] w-8 h-8 rounded-full bg-cream text-espresso flex items-center justify-center font-bold text-xs hotspot-pulse shadow-xl border border-espresso/20 focus:outline-none transition-transform hover:scale-125"
+                        >
+                            <i class="ph ph-plus text-xs"></i>
+                        </button>
+
+                        <!-- Hotspot 2: Cashmere Turtleneck -->
+                        <button 
+                            onclick="selectHotspot(2)"
+                            aria-label="Inspect Mockneck Cashmere Knit"
+                            class="absolute top-[42%] left-[52%] w-8 h-8 rounded-full bg-cream text-espresso flex items-center justify-center font-bold text-xs hotspot-pulse shadow-xl border border-espresso/20 focus:outline-none transition-transform hover:scale-125"
+                        >
+                            <i class="ph ph-plus text-xs"></i>
+                        </button>
+
+                        <!-- Hotspot 3: Pleated Wide Leg Trouser -->
+                        <button 
+                            onclick="selectHotspot(3)"
+                            aria-label="Inspect Pleated Flannel Trousers"
+                            class="absolute top-[75%] left-[48%] w-8 h-8 rounded-full bg-cream text-espresso flex items-center justify-center font-bold text-xs hotspot-pulse shadow-xl border border-espresso/20 focus:outline-none transition-transform hover:scale-125"
+                        >
+                            <i class="ph ph-plus text-xs"></i>
+                        </button>
+                    </div>
+
+                    <!-- Right: Dynamic Hotspot Showcase Card -->
+                    <div class="lg:col-span-5">
+                        <div id="hotspotCard" class="bg-cream p-8 rounded-3xl border border-stone/30 shadow-xl transition-all duration-300">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Fabric Provenance & Honest Pricing Breakdown -->
+        <section id="fabrics" class="py-20 bg-cream">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-[11px] uppercase tracking-widest font-semibold text-bronze">Honest Math</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-espresso font-light">
+                            How a $650 luxury sweater costs you $118.
+                        </h2>
+                        <p class="text-sm text-muted leading-relaxed font-light">
+                            Standard luxury brand margins fund storefronts on Fifth Avenue, celebrity ambassadors, and multi-tier distribution middlemen. We cut all three. 
+                        </p>
+
+                        <!-- Pricing Table Comparison -->
+                        <div class="bg-ecru/70 rounded-2xl p-6 border border-stone/40 space-y-4">
+                            <div class="flex justify-between items-center pb-3 border-b border-stone/30 text-xs">
+                                <span class="font-semibold uppercase tracking-wider text-charcoal">Cost Breakdown</span>
+                                <div class="space-x-8 font-semibold uppercase tracking-wider">
+                                    <span class="text-muted">High Luxury</span>
+                                    <span class="text-espresso">AURORA Atelier</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-center text-xs text-muted">
+                                <span>Grade-A Mongolian Cashmere</span>
+                                <div class="space-x-12 font-mono">
+                                    <span>$48.00</span>
+                                    <span class="text-charcoal font-medium">$48.00</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs text-muted">
+                                <span>Artisanal Cut, Sew & Finishing</span>
+                                <div class="space-x-12 font-mono">
+                                    <span>$22.00</span>
+                                    <span class="text-charcoal font-medium">$22.00</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs text-muted">
+                                <span>Custom Duties & Freight</span>
+                                <div class="space-x-12 font-mono">
+                                    <span>$9.00</span>
+                                    <span class="text-charcoal font-medium">$9.00</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center text-xs text-muted">
+                                <span>Luxury Showroom & Marketing Markup</span>
+                                <div class="space-x-12 font-mono text-terracotta">
+                                    <span>+$571.00</span>
+                                    <span class="text-olive font-semibold">+$39.00</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center pt-3 border-t border-stone/30 font-semibold text-sm">
+                                <span class="text-espresso">Your Final Price</span>
+                                <div class="space-x-12 font-mono">
+                                    <span class="line-through text-muted">$650.00</span>
+                                    <span class="text-espresso text-base font-bold bg-bronze/15 px-2 py-0.5 rounded text-bronze">$118.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3 text-xs text-muted italic">
+                            <i class="ph ph-shield-check text-olive text-lg"></i>
+                            <span>OEKO-TEX&reg; 100 Certified dyes. GOTS Certified organic yarns.</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand">
+                                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Garment atelier production" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x750/E9E4DC/211F1D?text=Atelier+Craft'"/>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-ecru border border-stone/30">
+                                <h3 class="font-serif text-lg text-espresso">French Seams</h3>
+                                <p class="text-xs text-muted mt-1 leading-relaxed">Enclosed raw edges inside every garment for friction-free skin contact.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="p-5 rounded-2xl bg-sand/60 border border-stone/30">
+                                <h3 class="font-serif text-lg text-espresso">Horn & Corozo</h3>
+                                <p class="text-xs text-muted mt-1 leading-relaxed">Sustainably sourced natural corozo buttons, never molded plastic.</p>
+                            </div>
+                            <div class="rounded-2xl overflow-hidden aspect-[4/5] bg-sand">
+                                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=600&q=80" alt="Pure natural textiles" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/600x750/E9E4DC/211F1D?text=Pure+Fabrics'"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Press & Customer Endorsements -->
+        <section id="reviews" class="py-20 bg-ecru border-t border-stone/30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-xl mx-auto mb-14">
+                    <span class="text-[11px] uppercase tracking-widest font-semibold text-bronze">Critical Acclaim</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-espresso font-light mt-1">Worn by Discerning Purists</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-cream p-8 rounded-3xl border border-stone/30 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-bronze text-sm mb-4">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <blockquote class="font-serif text-lg italic text-espresso leading-relaxed">
+                                "The coat arrived in custom cotton garment bags. The weight and drape matches my $1,400 Max Mara, without a doubt."
+                            </blockquote>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-charcoal">Clara V. — Geneva</span>
+                            <span class="text-muted">Verified Client</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-cream p-8 rounded-3xl border border-stone/30 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-bronze text-sm mb-4">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <blockquote class="font-serif text-lg italic text-espresso leading-relaxed">
+                                "AURORA has cracked the code of luxury clothing. No logos, just immaculate drape and cashmere that doesn't pill after two wears."
+                            </blockquote>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-charcoal">Style Quarterly</span>
+                            <span class="text-muted">Fashion Review</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-cream p-8 rounded-3xl border border-stone/30 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                        <div>
+                            <div class="flex text-bronze text-sm mb-4">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <blockquote class="font-serif text-lg italic text-espresso leading-relaxed">
+                                "The silk slip dress has French seams and a bias cut that falls like liquid amber. At $94, it is almost criminal."
+                            </blockquote>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-stone/20 flex items-center justify-between text-xs">
+                            <span class="font-semibold text-charcoal">Helena M. — London</span>
+                            <span class="text-muted">Verified Client</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Newsletter Atelier Club Section -->
+        <section class="py-20 bg-espresso text-cream relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <span class="text-[11px] uppercase tracking-widest font-semibold text-bronze">Private Allocation</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-light mt-2 tracking-tight">Receive First Access to Small Batch Releases</h2>
+                <p class="text-xs sm:text-sm text-stone mt-4 max-w-lg mx-auto font-light leading-relaxed">
+                    Because we work with small artisanal mills, our capsules are produced in numbered runs of 150 pieces. Members receive early invitations 24 hours ahead of release.
+                </p>
+
+                <form onsubmit="handleNewsletter(event)" class="mt-8 max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input 
+                        type="email" 
+                        required 
+                        placeholder="Enter your email address..."
+                        class="w-full px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-cream placeholder:text-stone/60 text-xs focus:outline-none focus:border-bronze transition-colors"
+                        id="newsletterEmail"
+                    />
+                    <button 
+                        type="submit" 
+                        class="px-8 py-3.5 rounded-full bg-cream text-espresso text-xs uppercase tracking-widest font-semibold hover:bg-bronze hover:text-white transition-all whitespace-nowrap shadow-lg"
+                    >
+                        Request Access
+                    </button>
+                </form>
+                <p class="text-[10px] text-stone/50 mt-3">We respect your peace. Only 2 quiet digests per month. No spam.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cream border-t border-stone/30 pt-16 pb-12 text-xs text-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-stone/30">
+                
+                <!-- Col 1: Brand -->
+                <div class="lg:col-span-2 space-y-4">
+                    <span class="font-serif text-2xl tracking-widest text-espresso font-light block">AURORA ATELIER</span>
+                    <p class="text-muted text-xs leading-relaxed max-w-sm">
+                        Parisian design heritage. Direct Italian and Mongolian fiber sourcing. Modern luxury without markup inflation.
+                    </p>
+                    <div class="pt-2 flex items-center space-x-4 text-charcoal text-lg">
+                        <a href="#" class="hover:text-bronze transition-colors" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" class="hover:text-bronze transition-colors" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
+                        <a href="#" class="hover:text-bronze transition-colors" aria-label="Spotify"><i class="ph ph-spotify-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Atelier -->
+                <div>
+                    <h4 class="font-semibold text-espresso uppercase tracking-widest text-[11px] mb-4">Wardrobe</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#collection" class="hover:text-bronze transition-colors">Autumn Outerwear</a></li>
+                        <li><a href="#collection" class="hover:text-bronze transition-colors">Pure Cashmere</a></li>
+                        <li><a href="#collection" class="hover:text-bronze transition-colors">Mulberry Silks</a></li>
+                        <li><a href="#collection" class="hover:text-bronze transition-colors">Tailored Suiting</a></li>
+                        <li><a href="#collection" class="hover:text-bronze transition-colors">Permanent Uniform</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Client Care -->
+                <div>
+                    <h4 class="font-semibold text-espresso uppercase tracking-widest text-[11px] mb-4">Client Care</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" onclick="showSizeGuideModal(event)" class="hover:text-bronze transition-colors">Tailoring & Sizing Guide</a></li>
+                        <li><a href="#" onclick="showToast('Complimentary shipping on all orders over $150')" class="hover:text-bronze transition-colors">Shipping & Customs</a></li>
+                        <li><a href="#" onclick="showToast('30-day pre-labeled returns included')" class="hover:text-bronze transition-colors">Free Global Returns</a></li>
+                        <li><a href="#" onclick="showToast('Garment repair atelier is free for 3 years')" class="hover:text-bronze transition-colors">Lifetime Care & Repair</a></li>
+                        <li><a href="#" onclick="showToast('Contact us: atelier@aurora-luxury.com')" class="hover:text-bronze transition-colors">Personal Concierge</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Ethics -->
+                <div>
+                    <h4 class="font-semibold text-espresso uppercase tracking-widest text-[11px] mb-4">Transparency</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#fabrics" class="hover:text-bronze transition-colors">Direct Cost Formula</a></li>
+                        <li><a href="#fabrics" class="hover:text-bronze transition-colors">Mill Provenance</a></li>
+                        <li><a href="#fabrics" class="hover:text-bronze transition-colors">Traceable Cashmere</a></li>
+                        <li><a href="#" onclick="showToast('Annual Transparency Report downloaded')" class="hover:text-bronze transition-colors">Impact Report 2026</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-muted space-y-4 sm:space-y-0">
+                <p>&copy; 2026 AURORA Atelier S.A. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-charcoal transition-colors">Privacy Charter</a>
+                    <a href="#" class="hover:text-charcoal transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-charcoal transition-colors">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Shopping Bag Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="cartDrawerPanel" class="absolute right-0 top-0 h-full w-full max-w-md bg-cream shadow-2xl p-6 sm:p-8 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+            
+            <!-- Cart Header -->
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-stone/30">
+                    <div class="flex items-center space-x-2">
+                        <i class="ph ph-tote text-xl text-espresso"></i>
+                        <h3 class="font-serif text-xl font-light text-espresso">Your Atelier Bag</h3>
+                        <span id="cartDrawerCount" class="text-xs bg-sand px-2 py-0.5 rounded-full font-medium text-charcoal">0 items</span>
+                    </div>
+                    <button onclick="toggleCartDrawer(false)" class="p-2 text-charcoal hover:text-bronze text-2xl" aria-label="Close cart">
+                        <i class="ph ph-x"></i>
+                    </button>
+                </div>
+
+                <!-- Free Shipping Progress Tracker -->
+                <div class="py-4 bg-ecru/80 -mx-6 px-6 border-b border-stone/30">
+                    <div class="flex justify-between text-[11px] font-medium text-charcoal">
+                        <span id="shippingProgressText">Add $150 for Complimentary Express Shipping</span>
+                        <span id="shippingPercentText" class="font-mono text-bronze">0%</span>
+                    </div>
+                    <div class="w-full h-1.5 bg-stone/40 rounded-full mt-2 overflow-hidden">
+                        <div id="shippingProgressBar" class="h-full bg-bronze transition-all duration-500 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Cart Items List Container -->
+                <div id="cartItemsList" class="mt-4 max-h-[48vh] overflow-y-auto space-y-4 pr-1">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- Cart Footer & Checkout -->
+            <div class="pt-6 border-t border-stone/30 space-y-4">
+                <div class="space-y-2 text-xs">
+                    <div class="flex justify-between text-muted">
+                        <span>Capsule Subtotal</span>
+                        <span id="cartSubtotal" class="font-mono text-charcoal">$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-muted">
+                        <span>Direct-To-Loom Savings</span>
+                        <span id="cartSavings" class="font-mono text-olive">-$0.00</span>
+                    </div>
+                    <div class="flex justify-between text-muted">
+                        <span>Estimated Shipping</span>
+                        <span id="cartShippingCost" class="font-mono text-charcoal">Calculated at checkout</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-semibold text-espresso pt-2 border-t border-stone/30">
+                        <span>Total Due</span>
+                        <span id="cartGrandTotal" class="font-mono text-base font-bold">$0.00</span>
+                    </div>
+                </div>
+
+                <button onclick="checkoutOrder()" class="w-full py-4 bg-espresso text-cream text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-bronze transition-all duration-300 shadow-lg flex items-center justify-center space-x-2">
+                    <i class="ph ph-lock-key"></i>
+                    <span>Proceed to Atelier Checkout</span>
+                </button>
+
+                <p class="text-[10px] text-center text-muted">Secured via 256-bit encrypted checkout &bull; 30-day trial</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div id="quickViewContainer" class="bg-cream rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-stone/30 transform scale-95 transition-transform duration-300 relative">
+            <button onclick="closeQuickView()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-cream/80 backdrop-blur-md text-charcoal hover:text-bronze flex items-center justify-center text-xl shadow" aria-label="Close modal">
+                <i class="ph ph-x"></i>
+            </button>
+
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Modal Left: Product Preview Image -->
+                <div class="aspect-[3/4] bg-sand">
+                    <img id="qvImage" src="" alt="Product view" class="w-full h-full object-cover"/>
+                </div>
+
+                <!-- Modal Right: Product Details & Controls -->
+                <div class="p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                        <span id="qvTag" class="text-[10px] uppercase tracking-widest font-semibold text-bronze">Outerwear</span>
+                        <h3 id="qvTitle" class="font-serif text-2xl font-normal text-espresso mt-1">Product Title</h3>
+                        
+                        <!-- Pricing Comparison in Modal -->
+                        <div class="flex items-baseline space-x-3 mt-2">
+                            <span id="qvPrice" class="text-xl font-bold font-mono text-espresso">$0.00</span>
+                            <span id="qvBenchmark" class="text-xs text-muted line-through font-mono">Traditional: $0.00</span>
+                        </div>
+
+                        <p id="qvDescription" class="text-xs text-muted mt-3 font-light leading-relaxed">
+                            Detailed garment descriptions highlighting fibers and drape.
+                        </p>
+
+                        <!-- Fiber Transparency Box -->
+                        <div class="mt-4 p-3.5 rounded-xl bg-ecru/80 border border-stone/30 text-[11px] space-y-1">
+                            <div class="flex justify-between">
+                                <span class="text-muted">Fiber Origin:</span>
+                                <span id="qvOrigin" class="font-medium text-charcoal">Biella, Italy</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted">Yarn Composition:</span>
+                                <span id="qvComposition" class="font-medium text-charcoal">100% Mongolian Cashmere</span>
+                            </div>
+                        </div>
+
+                        <!-- Size Selector -->
+                        <div class="mt-4">
+                            <div class="flex justify-between text-xs mb-2">
+                                <span class="font-semibold uppercase tracking-wider text-charcoal">Select Size</span>
+                                <button onclick="showSizeGuideModal(event)" class="text-bronze underline">Size Guide</button>
+                            </div>
+                            <div class="flex space-x-2" id="qvSizeSelectors">
+                                <button type="button" class="size-btn px-3.5 py-1.5 text-xs rounded-lg border border-stone/50 hover:border-espresso font-medium active-size bg-espresso text-cream" onclick="selectSize(this, 'XS')">XS</button>
+                                <button type="button" class="size-btn px-3.5 py-1.5 text-xs rounded-lg border border-stone/50 hover:border-espresso font-medium" onclick="selectSize(this, 'S')">S</button>
+                                <button type="button" class="size-btn px-3.5 py-1.5 text-xs rounded-lg border border-stone/50 hover:border-espresso font-medium" onclick="selectSize(this, 'M')">M</button>
+                                <button type="button" class="size-btn px-3.5 py-1.5 text-xs rounded-lg border border-stone/50 hover:border-espresso font-medium" onclick="selectSize(this, 'L')">L</button>
+                                <button type="button" class="size-btn px-3.5 py-1.5 text-xs rounded-lg border border-stone/50 hover:border-espresso font-medium" onclick="selectSize(this, 'XL')">XL</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="qvAddToCartBtn" onclick="addCurrentQvToCart()" class="w-full py-3.5 rounded-full bg-espresso text-cream text-xs uppercase tracking-widest font-semibold hover:bg-bronze transition-all shadow-md flex items-center justify-center space-x-2">
+                        <i class="ph ph-tote"></i>
+                        <span>Add To Atelier Bag</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Guide Modal -->
+    <div id="sizeGuideModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="bg-cream rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-stone/30 relative">
+            <button onclick="closeSizeGuide()" class="absolute top-4 right-4 text-charcoal hover:text-bronze text-2xl" aria-label="Close size guide">
+                <i class="ph ph-x"></i>
+            </button>
+            <span class="text-[10px] uppercase tracking-widest font-semibold text-bronze">Atelier Measurement Chart</span>
+            <h3 class="font-serif text-2xl font-normal text-espresso mt-1">Tailoring Sizing Guide</h3>
+            <p class="text-xs text-muted mt-1 leading-relaxed">
+                Our silhouettes are designed for a relaxed, quiet-luxury drape. If between sizes, choose your typical size for an effortless fall.
+            </p>
+
+            <div class="mt-6 overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                    <thead>
+                        <tr class="border-b border-stone/40 text-espresso uppercase tracking-wider font-semibold">
+                            <th class="pb-2">Size</th>
+                            <th class="pb-2">Bust / Chest</th>
+                            <th class="pb-2">Waist</th>
+                            <th class="pb-2">Hip</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-muted divide-y divide-stone/20 font-mono">
+                        <tr><td class="py-2 font-sans font-medium text-charcoal">XS (0-2)</td><td class="py-2">32-33"</td><td class="py-2">24-25"</td><td class="py-2">34-35"</td></tr>
+                        <tr><td class="py-2 font-sans font-medium text-charcoal">S (4-6)</td><td class="py-2">34-35"</td><td class="py-2">26-27"</td><td class="py-2">36-37"</td></tr>
+                        <tr><td class="py-2 font-sans font-medium text-charcoal">M (8-10)</td><td class="py-2">36-37"</td><td class="py-2">28-29"</td><td class="py-2">38-39"</td></tr>
+                        <tr><td class="py-2 font-sans font-medium text-charcoal">L (12-14)</td><td class="py-2">38-40"</td><td class="py-2">30-32"</td><td class="py-2">40-42"</td></tr>
+                        <tr><td class="py-2 font-sans font-medium text-charcoal">XL (16)</td><td class="py-2">41-43"</td><td class="py-2">33-35"</td><td class="py-2">43-45"</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button onclick="closeSizeGuide()" class="mt-6 w-full py-3 bg-sand text-charcoal text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-stone/50 transition-colors">
+                Return to Garment
+            </button>
+        </div>
+    </div>
+
+    <!-- Live Search Modal -->
+    <div id="searchModal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-start justify-center pt-24 p-4">
+        <div class="bg-cream rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-stone/30 relative">
+            <div class="flex items-center space-x-3 pb-3 border-b border-stone/40">
+                <i class="ph ph-magnifying-glass text-xl text-muted"></i>
+                <input 
+                    type="text" 
+                    id="searchCatalogInput" 
+                    placeholder="Search cashmere, coats, silk slips..."
+                    class="w-full bg-transparent text-sm focus:outline-none placeholder:text-muted/60"
+                    oninput="handleLiveSearch(this.value)"
+                />
+                <button onclick="toggleSearchModal(false)" class="text-charcoal hover:text-bronze" aria-label="Close search">
+                    <i class="ph ph-x text-lg"></i>
+                </button>
+            </div>
+            
+            <div id="searchResultsList" class="mt-4 max-h-64 overflow-y-auto space-y-2 text-xs">
+                <p class="text-muted italic text-center py-4">Type to filter catalog pieces...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elegant Toast Alert Container -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 bg-espresso text-cream px-5 py-3.5 rounded-2xl shadow-2xl border border-white/10 text-xs flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="ph ph-sparkle text-bronze text-lg"></i>
+        <span id="toastMessage">Notification message</span>
+    </div>
+
+    <script>
+        /* ==========================================================================
+           PRODUCT CATALOG DATA STORE
+           ========================================================================== */
+        const PRODUCTS = [
+            {
+                id: 1,
+                name: "The Double-Faced Cashmere Robe Coat",
+                category: "coats",
+                price: 240,
+                retailBenchmark: 820,
+                tag: "Double-Weave Wool & Cashmere",
+                origin: "Biella, Italy",
+                composition: "70% Virgin Wool, 30% Grade-A Mongolian Cashmere",
+                description: "Hand-finished split seams, unlined fluid drape, tailored with removable sash belt and deep horn button welt pockets.",
+                image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Cashmere+Robe+Coat",
+                colors: ["#C4B7A6", "#211F1D", "#707C6A"]
+            },
+            {
+                id: 2,
+                name: "The 100% Mongolian Cashmere Mockneck",
+                category: "knitwear",
+                price: 118,
+                retailBenchmark: 380,
+                tag: "Pure Grade-A Cashmere",
+                origin: "Inner Mongolia / Spun in Scotland",
+                composition: "100% 2-Ply Mongolian Cashmere (15.2 micron)",
+                description: "Featherlight yet exceptionally insulating. Ribbed cuffs and neckline engineered to preserve structure through washings.",
+                image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Cashmere+Knit",
+                colors: ["#F5F2EB", "#9B784A", "#141211"]
+            },
+            {
+                id: 3,
+                name: "Heavyweight Mulberry Silk Bias Slip",
+                category: "silks",
+                price: 94,
+                retailBenchmark: 320,
+                tag: "22 Momme Silk",
+                origin: "Hangzhou Silk Atelier",
+                composition: "100% Pure Grade 6A Mulberry Silk",
+                description: "Cut entirely on the true 45-degree bias to glide across contours with a fluid liquid shimmer. Fully opaque 22-momme weight.",
+                image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Mulberry+Silk+Dress",
+                colors: ["#DCD3C7", "#1E293B", "#8C6A5A"]
+            },
+            {
+                id: 4,
+                name: "High-Rise Pleated Flannel Trousers",
+                category: "trousers",
+                price: 128,
+                retailBenchmark: 410,
+                tag: "Italian Wool Flannel",
+                origin: "Milan Pattern House",
+                composition: "98% Virgin Wool Flannel, 2% Elastane",
+                description: "Double front pleats, extended tab waistband with internal waist adjusters, and a sweeping wide-leg puddle hem.",
+                image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Wool+Trousers",
+                colors: ["#4A4744", "#D8D2C9", "#1B1B1B"]
+            },
+            {
+                id: 5,
+                name: "Structured Merino Cardigan Coat",
+                category: "knitwear",
+                price: 135,
+                retailBenchmark: 460,
+                tag: "Extra-Fine Merino",
+                origin: "Tuscany, Italy",
+                composition: "100% Extra-Fine 19.5 Micron Merino Wool",
+                description: "Substantial Milano stitch creating architectural jacket structure with the supreme comfort of a warm knit cardigan.",
+                image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Merino+Cardigan",
+                colors: ["#E7E1D8", "#636D58"]
+            },
+            {
+                id: 6,
+                name: "Tailored Oversized Wool Blazer",
+                category: "coats",
+                price: 185,
+                retailBenchmark: 590,
+                tag: "Savile Pattern Cut",
+                origin: "Porto, Portugal",
+                composition: "100% Worsted Wool with Cupro Bemberg Lining",
+                description: "Structured shoulder pads, vented back, horn button cuffs, and silky breathable cupro lining that will never cling.",
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Wool+Blazer",
+                colors: ["#282522", "#8E887E"]
+            },
+            {
+                id: 7,
+                name: "Silk-Cashmere Gauze Button Down",
+                category: "silks",
+                price: 98,
+                retailBenchmark: 310,
+                tag: "Silk & Cashmere Blend",
+                origin: "Lake Como, Italy",
+                composition: "70% Silk, 30% Cashmere",
+                description: "Breathes like gossamer linen but feels like soft cloud cashmere. Finished with mother-of-pearl buttons.",
+                image: "https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Silk+Shirt",
+                colors: ["#F9F8F6", "#C4B299"]
+            },
+            {
+                id: 8,
+                name: "Wide-Leg Raw Denim Sailor Pant",
+                category: "trousers",
+                price: 92,
+                retailBenchmark: 290,
+                tag: "Selvedge Cotton",
+                origin: "Okayama, Japan",
+                composition: "100% Long-Staple Organic Cotton",
+                description: "Shuttle-loom woven with clean selvedge seams. Soft-rinsed with pumice stones for a broken-in gentle drape.",
+                image: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80",
+                fallbackImage: "https://placehold.co/600x800/E9E4DC/211F1D?text=Raw+Selvedge+Pant",
+                colors: ["#EBE8E1", "#2D3748"]
+            }
+        ];
+
+        /* Lookbook Hotspots Data */
+        const HOTSPOTS = {
+            1: {
+                productId: 1,
+                title: "The Double-Faced Cashmere Robe Coat",
+                subtitle: "Layer 01 &bull; Sand Melange",
+                price: "$240",
+                benchmark: "Compare: $820",
+                quote: "Unlined double-weave construction where two layers of pure wool and cashmere are hand-split and tucked at the seams."
+            },
+            2: {
+                productId: 2,
+                title: "The 100% Mongolian Cashmere Mockneck",
+                subtitle: "Layer 02 &bull; Alabaster Cream",
+                price: "$118",
+                benchmark: "Compare: $380",
+                quote: "Spun from 15.2-micron Grade-A underfleece from nomadic herds in the Gobi desert. Zero chemical bleaching."
+            },
+            3: {
+                productId: 4,
+                title: "High-Rise Pleated Flannel Trousers",
+                subtitle: "Layer 03 &bull; Charcoal Heather",
+                price: "$128",
+                benchmark: "Compare: $410",
+                quote: "Italian mill flannel with an interior curtain waistband inspired by traditional Savile Row tailoring."
+            }
+        };
+
+        let cart = [];
+        let currentQuickViewProduct = null;
+        let selectedQuickViewSize = 'XS';
+        let wishlist = new Set();
+
+        // Initialize App on DOM Loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProductGrid(PRODUCTS);
+            selectHotspot(1);
+            setupMobileMenu();
+        });
+
+        /* Render Products */
+        function renderProductGrid(items) {
+            const container = document.getElementById('productGrid');
+            if (!container) return;
+
+            container.innerHTML = items.map(p => `
+                <div class="product-card group fade-in flex flex-col justify-between" data-category="${p.category}">
+                    <div>
+                        <!-- Product Image Box -->
+                        <div class="relative aspect-[3/4] rounded-2xl overflow-hidden bg-sand border border-stone/20">
+                            <img 
+                                src="${p.image}" 
+                                alt="${p.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='${p.fallbackImage}'"
+                                loading="lazy"
+                            />
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-3 left-3 bg-cream/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[9px] uppercase tracking-widest font-semibold text-charcoal border border-stone/30">
+                                ${p.tag}
+                            </div>
+
+                            <!-- Wishlist button -->
+                            <button 
+                                onclick="toggleWishlist(${p.id}, event)" 
+                                aria-label="Save to wishlist"
+                                class="absolute top-3 right-3 w-8 h-8 rounded-full bg-cream/90 backdrop-blur-md flex items-center justify-center text-charcoal hover:text-bronze transition-colors shadow-sm"
+                            >
+                                <i class="ph ${wishlist.has(p.id) ? 'ph-fill text-terracotta ph-heart' : 'ph-heart'} text-base"></i>
+                            </button>
+
+                            <!-- Quick Action Overlay -->
+                            <div class="absolute inset-x-3 bottom-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button 
+                                    onclick="openQuickView(${p.id})" 
+                                    class="flex-1 py-2.5 bg-cream/95 backdrop-blur-md text-charcoal text-[11px] uppercase tracking-wider font-semibold rounded-xl hover:bg-espresso hover:text-cream transition-all shadow-md"
+                                >
+                                    Quick Inspect
+                                </button>
+                                <button 
+                                    onclick="quickAddToCart(${p.id})" 
+                                    class="w-10 h-10 bg-espresso text-cream rounded-xl flex items-center justify-center hover:bg-bronze transition-colors shadow-md"
+                                    title="Add XS to Bag"
+                                    aria-label="Add item to bag"
+                                >
+                                    <i class="ph ph-plus text-base"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="mt-3.5 space-y-1">
+                            <div class="flex items-center space-x-1.5">
+                                ${p.colors.map(c => `<span class="w-2.5 h-2.5 rounded-full border border-black/10 inline-block" style="background-color: ${c}"></span>`).join('')}
+                                <span class="text-[10px] text-muted ml-1">${p.colors.length} shades</span>
+                            </div>
+                            <h3 class="font-serif text-lg font-normal text-espresso leading-snug group-hover:text-bronze transition-colors">
+                                ${p.name}
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Display -->
+                    <div class="pt-2 flex items-baseline justify-between border-t border-stone/20 mt-2">
+                        <div class="flex items-baseline space-x-2">
+                            <span class="font-mono text-sm font-semibold text-espresso">$${p.price}</span>
+                            <span class="font-mono text-[11px] text-muted line-through">$${p.retailBenchmark}</span>
+                        </div>
+                        <span class="text-[10px] font-semibold text-olive uppercase tracking-wider">
+                            Save $${p.retailBenchmark - p.price}
+                        </span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.dataset.cat === category) {
+                    btn.classList.remove('bg-ecru', 'text-charcoal');
+                    btn.classList.add('bg-espresso', 'text-cream');
+                } else {
+                    btn.classList.remove('bg-espresso', 'text-cream');
+                    btn.classList.add('bg-ecru', 'text-charcoal');
+                }
+            });
+
+            if (category === 'all') {
+                renderProductGrid(PRODUCTS);
+            } else {
+                const filtered = PRODUCTS.filter(p => p.category === category);
+                renderProductGrid(filtered);
+            }
+        }
+
+        function selectHotspot(hotspotId) {
+            const data = HOTSPOTS[hotspotId];
+            if (!data) return;
+
+            const card = document.getElementById('hotspotCard');
+            card.innerHTML = `
+                <div class="fade-in space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-bronze">${data.subtitle}</span>
+                        <span class="text-[11px] bg-sand px-2.5 py-0.5 rounded-full text-charcoal font-medium">Capsule Item 0${hotspotId}</span>
+                    </div>
+                    
+                    <h3 class="font-serif text-2xl text-espresso font-normal leading-snug">${data.title}</h3>
+                    
+                    <blockquote class="font-serif italic text-sm text-muted border-l-2 border-bronze pl-4 py-1">
+                        "${data.quote}"
+                    </blockquote>
+
+                    <div class="p-4 rounded-2xl bg-ecru/80 border border-stone/40 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-muted block">Direct Price</span>
+                            <span class="text-xl font-mono font-bold text-espresso">${data.price}</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] uppercase tracking-wider text-muted block">Traditional Luxury</span>
+                            <span class="text-xs font-mono line-through text-muted">${data.benchmark}</span>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-3 pt-2">
+                        <button onclick="openQuickView(${data.productId})" class="flex-1 py-3 bg-espresso text-cream text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-bronze transition-all">
+                            Inspect Garment
+                        </button>
+                        <button onclick="quickAddToCart(${data.productId})" class="px-5 py-3 bg-sand text-charcoal text-xs uppercase tracking-widest font-semibold rounded-full hover:bg-stone/50 transition-all" title="Quick Add">
+                            <i class="ph ph-tote"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function quickAddToCart(productId) {
+            const prod = PRODUCTS.find(p => p.id === productId);
+            if (!prod) return;
+            addToCart(prod, 'M');
+        }
+
+        function addToCart(product, size = 'M') {
+            const existing = cart.find(item => item.id === product.id && item.size === size);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    retailBenchmark: product.retailBenchmark,
+                    size: size,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            updateCartUI();
+            toggleCartDrawer(true);
+            showToast(`Added ${product.name} (Size ${size}) to your Atelier Bag`);
+        }
+
+        function updateCartQuantity(index, delta) {
+            if (!cart[index]) return;
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const countBadge = document.getElementById('cartCountBadge');
+            const headerTotal = document.getElementById('cartHeaderTotal');
+            const drawerCount = document.getElementById('cartDrawerCount');
+            const listContainer = document.getElementById('cartItemsList');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const savingsEl = document.getElementById('cartSavings');
+            const grandTotalEl = document.getElementById('cartGrandTotal');
+            const progressBar = document.getElementById('shippingProgressBar');
+            const progressText = document.getElementById('shippingProgressText');
+            const percentText = document.getElementById('shippingPercentText');
+
+            const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
+            const subtotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+            const totalRetail = cart.reduce((sum, i) => sum + (i.retailBenchmark * i.quantity), 0);
+            const savings = Math.max(0, totalRetail - subtotal);
+
+            countBadge.innerText = totalItems;
+            headerTotal.innerText = `$${subtotal.toFixed(2)}`;
+            drawerCount.innerText = `${totalItems} ${totalItems === 1 ? 'item' : 'items'}`;
+            subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+            savingsEl.innerText = `-$${savings.toFixed(2)}`;
+            grandTotalEl.innerText = `$${subtotal.toFixed(2)}`;
+
+            // Shipping bar calculations
+            const freeThreshold = 150;
+            const progress = Math.min(100, (subtotal / freeThreshold) * 100);
+            progressBar.style.width = `${progress}%`;
+            percentText.innerText = `${Math.round(progress)}%`;
+
+            if (subtotal >= freeThreshold) {
+                progressText.innerText = "Congratulations! You've unlocked Free Express Shipping";
+                document.getElementById('cartShippingCost').innerText = "FREE";
+                document.getElementById('cartShippingCost').classList.add('text-olive');
+            } else {
+                const remaining = freeThreshold - subtotal;
+                progressText.innerText = `Add $${remaining.toFixed(2)} for Complimentary Express Shipping`;
+                document.getElementById('cartShippingCost').innerText = "Calculated at checkout";
+                document.getElementById('cartShippingCost').classList.remove('text-olive');
+            }
+
+            // Render list
+            if (cart.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-12 text-muted">
+                        <i class="ph ph-tote text-4xl text-stone block mb-2"></i>
+                        <p class="font-serif italic text-base text-charcoal">Your bag is currently empty.</p>
+                        <p class="text-xs mt-1">Discover quiet luxury staples crafted with honest pricing.</p>
+                        <button onclick="toggleCartDrawer(false)" class="mt-4 px-6 py-2 rounded-full bg-sand text-charcoal text-xs uppercase tracking-widest font-semibold hover:bg-stone/50 transition-colors">
+                            Explore Capsule
+                        </button>
+                    </div>
+                `;
+            } else {
+                listContainer.innerHTML = cart.map((item, idx) => `
+                    <div class="flex items-center space-x-3.5 p-3 rounded-2xl bg-ecru/60 border border-stone/20">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-20 object-cover rounded-xl bg-sand shrink-0"/>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-serif text-sm font-normal text-espresso truncate">${item.name}</h4>
+                            <p class="text-[11px] text-muted">Size: <span class="font-medium text-charcoal">${item.size}</span></p>
+                            <div class="flex items-baseline space-x-2 mt-0.5">
+                                <span class="font-mono text-xs font-semibold text-espresso">$${item.price}</span>
+                                <span class="text-[10px] text-muted line-through font-mono">$${item.retailBenchmark}</span>
+                            </div>
+                            
+                            <!-- Quantity adjuster -->
+                            <div class="flex items-center space-x-2 mt-2">
+                                <button onclick="updateCartQuantity(${idx}, -1)" class="w-5 h-5 rounded bg-cream border border-stone/40 flex items-center justify-center text-xs hover:bg-sand text-charcoal" aria-label="Decrease quantity">-</button>
+                                <span class="text-xs font-mono font-medium">${item.quantity}</span>
+                                <button onclick="updateCartQuantity(${idx}, 1)" class="w-5 h-5 rounded bg-cream border border-stone/40 flex items-center justify-center text-xs hover:bg-sand text-charcoal" aria-label="Increase quantity">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeCartItem(${idx})" class="p-2 text-muted hover:text-terracotta text-lg transition-colors" title="Remove item" aria-label="Remove item">
+                            <i class="ph ph-trash"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const panel = document.getElementById('cartDrawerPanel');
+            if (open) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                panel.classList.add('translate-x-full');
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        // Quick View Actions
+        function openQuickView(productId) {
+            const prod = PRODUCTS.find(p => p.id === productId);
+            if (!prod) return;
+            currentQuickViewProduct = prod;
+
+            document.getElementById('qvImage').src = prod.image;
+            document.getElementById('qvTag').innerText = prod.tag;
+            document.getElementById('qvTitle').innerText = prod.name;
+            document.getElementById('qvPrice').innerText = `$${prod.price}`;
+            document.getElementById('qvBenchmark').innerText = `Traditional Retail: $${prod.retailBenchmark}`;
+            document.getElementById('qvDescription').innerText = prod.description;
+            document.getElementById('qvOrigin').innerText = prod.origin;
+            document.getElementById('qvComposition').innerText = prod.composition;
+
+            // Reset selected size
+            selectedQuickViewSize = 'XS';
+            const sizeBtns = document.querySelectorAll('#qvSizeSelectors .size-btn');
+            sizeBtns.forEach((b, i) => {
+                if (i === 0) {
+                    b.classList.add('bg-espresso', 'text-cream');
+                } else {
+                    b.classList.remove('bg-espresso', 'text-cream');
+                }
+            });
+
+            const modal = document.getElementById('quickViewModal');
+            const container = document.getElementById('quickViewContainer');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            container.classList.remove('scale-95');
+        }
+
+        function selectSize(button, size) {
+            selectedQuickViewSize = size;
+            const sizeBtns = document.querySelectorAll('#qvSizeSelectors .size-btn');
+            sizeBtns.forEach(b => b.classList.remove('bg-espresso', 'text-cream'));
+            button.classList.add('bg-espresso', 'text-cream');
+        }
+
+        function addCurrentQvToCart() {
+            if (!currentQuickViewProduct) return;
+            addToCart(currentQuickViewProduct, selectedQuickViewSize);
+            closeQuickView();
+        }
+
+        function closeQuickView() {
+            const modal = document.getElementById('quickViewModal');
+            const container = document.getElementById('quickViewContainer');
+            container.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        /* Wishlist toggling */
+        function toggleWishlist(productId, event) {
+            event.stopPropagation();
+            if (wishlist.has(productId)) {
+                wishlist.delete(productId);
+                showToast("Removed from your saved items");
+            } else {
+                wishlist.add(productId);
+                showToast("Saved to your personal capsule wishlist");
+            }
+            const badge = document.getElementById('wishlistCount');
+            if (wishlist.size > 0) {
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+            renderProductGrid(PRODUCTS);
+        }
+
+        function showSizeGuideModal(event) {
+            if (event) event.preventDefault();
+            const modal = document.getElementById('sizeGuideModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeSizeGuide() {
+            const modal = document.getElementById('sizeGuideModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        function toggleSearchModal(open = true) {
+            const modal = document.getElementById('searchModal');
+            const input = document.getElementById('searchCatalogInput');
+            if (open) {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                input.focus();
+            } else {
+                modal.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function handleLiveSearch(query) {
+            const container = document.getElementById('searchResultsList');
+            const q = query.trim().toLowerCase();
+            if (!q) {
+                container.innerHTML = `<p class="text-muted italic text-center py-4">Type to filter catalog pieces...</p>`;
+                return;
+            }
+
+            const results = PRODUCTS.filter(p => 
+                p.name.toLowerCase().includes(q) || 
+                p.composition.toLowerCase().includes(q) ||
+                p.category.toLowerCase().includes(q)
+            );
+
+            if (results.length === 0) {
+                container.innerHTML = `<p class="text-muted text-center py-4">No quiet luxury pieces matched "${query}".</p>`;
+                return;
+            }
+
+            container.innerHTML = results.map(p => `
+                <div onclick="openQuickView(${p.id}); toggleSearchModal(false)" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-ecru cursor-pointer transition-colors border border-stone/20">
+                    <div class="flex items-center space-x-3">
+                        <img src="${p.image}" alt="${p.name}" class="w-10 h-12 object-cover rounded-lg bg-sand"/>
+                        <div>
+                            <p class="font-serif text-sm font-normal text-espresso">${p.name}</p>
+                            <p class="text-[10px] text-muted">${p.composition}</p>
+                        </div>
+                    </div>
+                    <span class="font-mono font-bold text-xs text-espresso">$${p.price}</span>
+                </div>
+            `).join('');
+        }
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            showToast(`Invitation sent to ${email}. Check your inbox for allocation access.`);
+            document.getElementById('newsletterEmail').value = '';
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) {
+                showToast("Your atelier bag is empty. Please select garments.");
+                return;
+            }
+            showToast("Redirecting to secured payment gateway (Demo simulation)...");
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toastNotification');
+            const text = document.getElementById('toastMessage');
+            text.innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+            }, 3500);
+        }
+
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobileMenuBtn');
+            const drawer = document.getElementById('mobileDrawer');
+            const panel = document.getElementById('mobileDrawerPanel');
+            const closeBtn = document.getElementById('closeMobileMenu');
+            const links = document.querySelectorAll('.mobile-nav-link');
+
+            function open() {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('-translate-x-full');
+            }
+            function close() {
+                panel.classList.add('-translate-x-full');
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+
+            btn.addEventListener('click', open);
+            closeBtn.addEventListener('click', close);
+            drawer.addEventListener('click', (e) => {
+                if (e.target === drawer) close();
+            });
+            links.forEach(l => l.addEventListener('click', close));
+
+            // Close cart on outside click
+            const cartDrawer = document.getElementById('cartDrawer');
+            cartDrawer.addEventListener('click', (e) => {
+                if (e.target === cartDrawer) toggleCartDrawer(false);
+            });
+        }
+    </script>
 </body>
 </html>
